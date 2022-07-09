@@ -13,6 +13,6 @@ public class KeyPressedCommand : Command
 
   public override void CheckStatus(InputManager inputManager)
   {
-    IsTriggered = inputManager.KeyboardState.WasKeyJustPressed(Key);
+    IsTriggered = inputManager.KeyboardState.WasKeyJustDown(this.Key);
   }
 }

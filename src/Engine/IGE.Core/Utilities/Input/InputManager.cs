@@ -3,24 +3,17 @@
 using Microsoft.Xna.Framework;
 
 using MonoGame.Extended;
+using MonoGame.Extended.Input;
 
 public class InputManager: SimpleGameComponent
 {
-  public InputManager()
-  {
-    this.KeyboardState = new KeyboardStateContainer();
-    this.GamePadState = new GamepadStateContainer();
-    this.MouseState = new MouseStateContainer();
-  }
+  public KeyboardStateExtended KeyboardState { get; private set; }
 
-  public KeyboardStateContainer KeyboardState { get; set; }
-  public GamepadStateContainer GamePadState { get; set; }
-  public MouseStateContainer MouseState { get; set; }
+  public MouseStateExtended MouseState { get; private set; }
 
   public override void Update(GameTime gameTime)
   {
-    this.KeyboardState.Update(gameTime);
-    this.MouseState.Update(gameTime);
-    this.GamePadState.Update(gameTime);
+    this.KeyboardState = KeyboardExtended.GetState();
+    this.MouseState = MouseExtended.GetState();
   }
 }

@@ -14,7 +14,7 @@ public class MovementSystem : EntityUpdateSystem
   private ComponentMapper<Transform2> transformMapper;
 
   public MovementSystem()
-    : base(Aspect.All(typeof(Transform2)))
+    : base(Aspect.All(typeof(Transform2), typeof(Movable)))
   {
   }
 

@@ -26,7 +26,6 @@ public class GameAdmin : Game
     this.Content.RootDirectory = "Content";
     this.IsFixedTimeStep = true;
     this.IsMouseVisible = true;
-    
   }
 
   protected override void Initialize()
